@@ -1,0 +1,5 @@
+{
+  "name": "CryptoDash",
+  "description": "A secure, high-performance cryptocurrency dashboard featuring runtime data validation and caching.",
+  "requestFramePermissions": []
+}
