@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from 'react-router-dom';
-import { LayoutDashboard, LineChart, PieChart, Newspaper } from 'lucide-react';
+import { LayoutDashboard, LineChart, PieChart, Newspaper, Settings } from 'lucide-react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 
@@ -8,6 +8,7 @@ const mobileNavItems = [
   { to: '/market', icon: LineChart, label: 'Market' },
   { to: '/portfolio', icon: PieChart, label: 'Portfolio' },
   { to: '/news', icon: Newspaper, label: 'News' },
+  { to: '/settings', icon: Settings, label: 'Settings' },
 ] as const;
 
 export const Layout = () => {
@@ -31,7 +32,7 @@ export const Layout = () => {
 
       {/* Mobile Bottom Navigation */}
       <nav
-        className="fixed bottom-0 left-0 w-full h-16 z-50 flex items-center justify-around
+        className="fixed bottom-0 left-0 w-full h-16 z-50 flex items-center justify-between px-4
                    border-t border-slate-800 bg-slate-900/80 backdrop-blur-lg md:hidden"
       >
         {mobileNavItems.map(({ to, icon: Icon, label }) => (
@@ -44,8 +45,7 @@ export const Layout = () => {
             {({ isActive }) => (
               <>
                 <Icon
-                  size={22}
-                  className={isActive ? 'text-emerald-500' : 'text-slate-400'}
+                  className={`w-5 h-5 ${isActive ? 'text-emerald-500' : 'text-slate-400'}`}
                 />
                 <span
                   className={`text-[10px] ${
